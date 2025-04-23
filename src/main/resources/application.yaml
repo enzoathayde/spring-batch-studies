@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: batchlivros
+  datasource:
+    url: jdbc:postgresql://localhost:5432/post_batch
+    username: postgres
+    password: postgres
+    hikari:
+      maximum-pool-size: 10
+      idle-timeout: 30000
+      connection-timeout: 20000
+    jpa:
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+  paginated:
+    url: https://jsonplaceholder.typicode.com/posts
+server:
+  port: 8090
+logging:
+  level:
+    com.desafio.batch.estudos: DEBUG
