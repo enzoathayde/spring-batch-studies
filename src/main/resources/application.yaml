@@ -1,22 +1,17 @@
 spring:
-  application:
-    name: batchlivros
+  jpa:
+    hibernate:
+      ddl-auto: none
+  batch:
+    initialize-schema: always
   datasource:
-    url: jdbc:postgresql://localhost:5432/post_batch
+    url: jdbc:postgresql://localhost:5432/alunos
     username: postgres
     password: postgres
-    hikari:
-      maximum-pool-size: 10
-      idle-timeout: 30000
-      connection-timeout: 20000
-    jpa:
-      properties:
-        hibernate:
-          dialect: org.hibernate.dialect.PostgreSQLDialect
-  paginated:
-    url: https://jsonplaceholder.typicode.com/posts
+    driver-class-name: org.postgresql.Driver
 server:
-  port: 8090
+  port: 8087
 logging:
   level:
-    com.desafio.batch.estudos: DEBUG
+    br.com.springbatch.estudo: DEBUG
+itemsPerChunk: 5
